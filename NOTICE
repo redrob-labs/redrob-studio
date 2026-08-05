@@ -1,0 +1,33 @@
+Redrob Studio
+Copyright 2026 Redrob
+Built by Janghoon Lee.
+
+This product includes software developed at Redrob.
+Original application code in this repository is licensed under the Apache
+License, Version 2.0. See the LICENSE file.
+
+--------------------------------------------------------------------
+Third-party model weights (downloaded separately; not redistributed here)
+--------------------------------------------------------------------
+
+Model weights used by shipped workflows are not part of this repository and
+remain under their upstream licenses. See eval/THIRD_PARTY_WEIGHTS.md for the
+authoritative inventory.
+
+Apache-2.0:
+  - savagemanage/redrob-image (redrob-image.safetensors), with CLIP from
+    Comfy-Org/z_image_turbo and VAE from Comfy-Org/HiDream-I1_ComfyUI
+  - Qwen3-TTS, Qwen3-ASR, Qwen2.5-VL-7B-Instruct
+
+MIT:
+  - ACE-Step 1.5 weights (Redrob Tune)
+
+--------------------------------------------------------------------
+GPU-host runtime (not part of this Next.js license grant)
+--------------------------------------------------------------------
+
+ComfyUI and community custom nodes are installed by
+scripts/setup-comfyui-local.sh on the GPU host. Those components may be
+GPL-3.0 or other licenses. They run as a separate process from this Apache-2.0
+application; review each node pack's LICENSE before redistributing a combined
+appliance image.
