@@ -1,0 +1,35 @@
+{
+  "1": {
+    "inputs": {
+      "text": "Hello.",
+      "instruct": "A warm, friendly female voice with a gentle tone.",
+      "model_choice": "1.7B",
+      "device": "auto",
+      "precision": "bf16",
+      "language": "Auto",
+      "seed": 0,
+      "max_new_tokens": 512,
+      "top_p": 0.8,
+      "top_k": 20,
+      "temperature": 1.0,
+      "repetition_penalty": 1.05,
+      "attention": "auto",
+      "unload_model_after_generate": false
+    },
+    "class_type": "FB_Qwen3TTSVoiceDesign",
+    "_meta": {
+      "title": "Design"
+    }
+  },
+  "2": {
+    "inputs": {
+      "audio": ["1", 0],
+      "filename_prefix": "audio/ComfyUI",
+      "quality": "320k"
+    },
+    "class_type": "SaveAudioMP3",
+    "_meta": {
+      "title": "Save audio"
+    }
+  }
+}

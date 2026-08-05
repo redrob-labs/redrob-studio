@@ -1,0 +1,47 @@
+{
+  "3": {
+    "inputs": {
+      "audio": "reference.wav"
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "Reference audio"
+    }
+  },
+  "1": {
+    "inputs": {
+      "target_text": "Hello.",
+      "model_choice": "1.7B",
+      "device": "auto",
+      "precision": "bf16",
+      "language": "Auto",
+      "ref_audio": ["3", 0],
+      "ref_text": "",
+      "seed": 0,
+      "max_new_tokens": 2048,
+      "top_p": 0.8,
+      "top_k": 20,
+      "temperature": 1.0,
+      "repetition_penalty": 1.05,
+      "x_vector_only": false,
+      "attention": "auto",
+      "unload_model_after_generate": false,
+      "custom_model_path": ""
+    },
+    "class_type": "FB_Qwen3TTSVoiceClone",
+    "_meta": {
+      "title": "Clone"
+    }
+  },
+  "2": {
+    "inputs": {
+      "audio": ["1", 0],
+      "filename_prefix": "audio/ComfyUI",
+      "quality": "320k"
+    },
+    "class_type": "SaveAudioMP3",
+    "_meta": {
+      "title": "Save audio"
+    }
+  }
+}

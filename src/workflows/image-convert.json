@@ -1,0 +1,59 @@
+{
+  "1": {
+    "inputs": {
+      "image": "input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "images": ["1", 0],
+      "filename_prefix": "convert/ComfyUI",
+      "file_type": "PNG",
+      "remove_metadata": false
+    },
+    "class_type": "SaveImagePlus",
+    "_meta": {
+      "title": "Save PNG"
+    }
+  },
+  "3": {
+    "inputs": {
+      "images": ["1", 0],
+      "filename_prefix": "convert/ComfyUI",
+      "file_type": "JPEG",
+      "remove_metadata": false
+    },
+    "class_type": "SaveImagePlus",
+    "_meta": {
+      "title": "Save JPEG"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": ["1", 0],
+      "filename_prefix": "convert/ComfyUI",
+      "file_type": "WEBP (lossy)",
+      "remove_metadata": false
+    },
+    "class_type": "SaveImagePlus",
+    "_meta": {
+      "title": "Save WEBP"
+    }
+  },
+  "5": {
+    "inputs": {
+      "images": ["1", 0],
+      "filename_prefix": "convert/ComfyUI",
+      "file_type": "WEBP (lossless)",
+      "remove_metadata": false
+    },
+    "class_type": "SaveImagePlus",
+    "_meta": {
+      "title": "Save WEBP (lossless)"
+    }
+  }
+}

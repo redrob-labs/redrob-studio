@@ -1,0 +1,70 @@
+{
+  "1": {
+    "inputs": {
+      "image": "input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": ["1", 0],
+      "upscale_method": "lanczos",
+      "scale_by": 1
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "Resize"
+    }
+  },
+  "3": {
+    "inputs": {
+      "images": ["2", 0],
+      "filename_prefix": "compress/ComfyUI",
+      "file_type": "WEBP (lossy)",
+      "remove_metadata": false
+    },
+    "class_type": "SaveImagePlus",
+    "_meta": {
+      "title": "Save WEBP"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": ["2", 0],
+      "filename_prefix": "compress/ComfyUI",
+      "file_type": "JPEG",
+      "remove_metadata": false
+    },
+    "class_type": "SaveImagePlus",
+    "_meta": {
+      "title": "Save JPEG"
+    }
+  },
+  "5": {
+    "inputs": {
+      "images": ["2", 0],
+      "filename_prefix": "compress/ComfyUI",
+      "file_type": "PNG",
+      "remove_metadata": false
+    },
+    "class_type": "SaveImagePlus",
+    "_meta": {
+      "title": "Save PNG"
+    }
+  },
+  "6": {
+    "inputs": {
+      "images": ["2", 0],
+      "filename_prefix": "compress/ComfyUI",
+      "file_type": "WEBP (lossless)",
+      "remove_metadata": false
+    },
+    "class_type": "SaveImagePlus",
+    "_meta": {
+      "title": "Save WEBP (lossless)"
+    }
+  }
+}

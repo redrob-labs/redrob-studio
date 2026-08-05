@@ -1,0 +1,37 @@
+{
+  "1": {
+    "inputs": {
+      "image": "input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "model_name": "Qwen2.5-VL-7B-Instruct",
+      "quantization": "None (FP16)",
+      "attention_mode": "auto",
+      "preset_prompt": "🖼️ Detailed Description",
+      "custom_prompt": "",
+      "max_tokens": 512,
+      "keep_model_loaded": true,
+      "seed": 1,
+      "image": ["1", 0]
+    },
+    "class_type": "AILab_QwenVL",
+    "_meta": {
+      "title": "Qwen2.5-VL"
+    }
+  },
+  "3": {
+    "inputs": {
+      "text": ["2", 0]
+    },
+    "class_type": "ShowText",
+    "_meta": {
+      "title": "Show Result"
+    }
+  }
+}

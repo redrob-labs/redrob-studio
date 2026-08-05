@@ -1,0 +1,801 @@
+{
+  "workflows": [
+    {
+      "modality": "image",
+      "file": "redrob-image-generate.json",
+      "promptNode": "4",
+      "promptField": "text",
+      "requiresImage": false,
+      "defaultPrompt": "",
+      "ui": {
+        "imageLayout": "none",
+        "promptLabel": "Prompt",
+        "promptPlaceholder": "Describe the scene…"
+      },
+      "outputSize": {
+        "node": "6",
+        "baseSize": 1024,
+        "step": 8,
+        "min": 512,
+        "max": 1536,
+        "defaultAspectRatio": "1:1",
+        "aspectRatios": [
+          {
+            "id": "1:1",
+            "label": "1:1"
+          },
+          {
+            "id": "4:3",
+            "label": "4:3"
+          },
+          {
+            "id": "3:4",
+            "label": "3:4"
+          },
+          {
+            "id": "16:9",
+            "label": "16:9"
+          },
+          {
+            "id": "9:16",
+            "label": "9:16"
+          }
+        ]
+      },
+      "checkpoint": {
+        "node": "1",
+        "name": "redrob-image.safetensors"
+      },
+      "samplerNode": "7",
+      "sampler": {
+        "node": "7",
+        "steps": 8,
+        "cfg": 1,
+        "sampler_name": "res_multistep",
+        "scheduler": "sgm_uniform",
+        "fast": {
+          "steps": 8,
+          "cfg": 1
+        }
+      },
+      "id": "redrob-image-generate",
+      "name": "redrob-image-generate",
+      "task": "redrob-image"
+    },
+    {
+      "id": "image-upscale",
+      "name": "image-upscale",
+      "modality": "image",
+      "task": "upscale",
+      "file": "image-upscale.json",
+      "imageNode": "1",
+      "requiresImage": true,
+      "requiresPrompt": false,
+      "ui": {
+        "imageLayout": "single-primary",
+        "uploadLabel": "Your photo",
+        "hidePrompt": true,
+        "hideAspectRatio": true
+      },
+      "upscale": {
+        "scaleNode": "3",
+        "saveNode": "4",
+        "defaultScale": 2,
+        "scales": [
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "id": "qwen3-tts-speak",
+      "name": "Speak",
+      "modality": "audio",
+      "task": "speak",
+      "file": "qwen3-tts-speak.json",
+      "outputType": "audio",
+      "promptNode": "1",
+      "promptField": "text",
+      "requiresImage": false,
+      "defaultPrompt": "",
+      "ui": {
+        "imageLayout": "none",
+        "promptLabel": "Text to speak",
+        "promptPlaceholder": "Type the words to speak aloud…"
+      },
+      "tts": {
+        "node": "1",
+        "saveNode": "2",
+        "mode": "customVoice",
+        "modelChoice": "1.7B",
+        "defaultSpeaker": "Ryan",
+        "defaultLanguage": "Auto",
+        "historyTimeoutMs": 300000,
+        "speakers": [
+          {
+            "id": "Ryan",
+            "label": "Ryan — English (male)"
+          },
+          {
+            "id": "Aiden",
+            "label": "Aiden — English (male, American)"
+          },
+          {
+            "id": "Vivian",
+            "label": "Vivian — Chinese (female)"
+          },
+          {
+            "id": "Serena",
+            "label": "Serena — Chinese (female)"
+          },
+          {
+            "id": "Uncle_fu",
+            "label": "Uncle Fu — Chinese (male)"
+          },
+          {
+            "id": "Dylan",
+            "label": "Dylan — Chinese (Beijing male)"
+          },
+          {
+            "id": "Eric",
+            "label": "Eric — Chinese (Sichuan male)"
+          },
+          {
+            "id": "Ono_anna",
+            "label": "Ono Anna — Japanese (female)"
+          },
+          {
+            "id": "Sohee",
+            "label": "Sohee — Korean (female)"
+          }
+        ],
+        "languages": [
+          {
+            "id": "Auto",
+            "label": "Auto"
+          },
+          {
+            "id": "English",
+            "label": "English"
+          },
+          {
+            "id": "Chinese",
+            "label": "Chinese"
+          },
+          {
+            "id": "Japanese",
+            "label": "Japanese"
+          },
+          {
+            "id": "Korean",
+            "label": "Korean"
+          },
+          {
+            "id": "Hindi",
+            "label": "Hindi"
+          },
+          {
+            "id": "French",
+            "label": "French"
+          },
+          {
+            "id": "German",
+            "label": "German"
+          },
+          {
+            "id": "Spanish",
+            "label": "Spanish"
+          },
+          {
+            "id": "Portuguese",
+            "label": "Portuguese"
+          },
+          {
+            "id": "Russian",
+            "label": "Russian"
+          },
+          {
+            "id": "Italian",
+            "label": "Italian"
+          }
+        ]
+      }
+    },
+    {
+      "id": "qwen3-tts-voice-clone",
+      "name": "Clone",
+      "modality": "audio",
+      "task": "voice-clone",
+      "file": "qwen3-tts-voice-clone.json",
+      "outputType": "audio",
+      "requiresAudio": true,
+      "audioInputs": [
+        {
+          "node": "3",
+          "label": "Reference voice",
+          "required": true
+        }
+      ],
+      "promptNode": "1",
+      "promptField": "target_text",
+      "requiresImage": false,
+      "defaultPrompt": "",
+      "ui": {
+        "imageLayout": "none",
+        "audioUploadLabel": "Reference voice (5–15 sec)",
+        "promptLabel": "Text to speak",
+        "promptPlaceholder": "Type the words to speak in the cloned voice…",
+        "refTextLabel": "Reference transcript",
+        "refTextPlaceholder": "Type exactly what is spoken in the reference clip (required for best quality)"
+      },
+      "tts": {
+        "node": "1",
+        "saveNode": "2",
+        "loadAudioNode": "3",
+        "mode": "voiceClone",
+        "modelChoice": "1.7B",
+        "defaultLanguage": "Auto",
+        "historyTimeoutMs": 300000,
+        "languages": [
+          {
+            "id": "Auto",
+            "label": "Auto"
+          },
+          {
+            "id": "English",
+            "label": "English"
+          },
+          {
+            "id": "Chinese",
+            "label": "Chinese"
+          },
+          {
+            "id": "Japanese",
+            "label": "Japanese"
+          },
+          {
+            "id": "Korean",
+            "label": "Korean"
+          },
+          {
+            "id": "Hindi",
+            "label": "Hindi"
+          },
+          {
+            "id": "French",
+            "label": "French"
+          },
+          {
+            "id": "German",
+            "label": "German"
+          },
+          {
+            "id": "Spanish",
+            "label": "Spanish"
+          },
+          {
+            "id": "Portuguese",
+            "label": "Portuguese"
+          },
+          {
+            "id": "Russian",
+            "label": "Russian"
+          },
+          {
+            "id": "Italian",
+            "label": "Italian"
+          }
+        ]
+      }
+    },
+    {
+      "id": "qwen3-tts-voice-design",
+      "name": "Design",
+      "modality": "audio",
+      "task": "voice-design",
+      "file": "qwen3-tts-voice-design.json",
+      "outputType": "audio",
+      "promptNode": "1",
+      "promptField": "text",
+      "requiresImage": false,
+      "defaultPrompt": "",
+      "ui": {
+        "imageLayout": "none",
+        "promptLabel": "Text to speak",
+        "promptPlaceholder": "Type the words to speak aloud…",
+        "voiceInstructLabel": "Voice description",
+        "voiceInstructPlaceholder": "Describe the voice you want — age, gender, tone, accent…"
+      },
+      "tts": {
+        "node": "1",
+        "saveNode": "2",
+        "mode": "voiceDesign",
+        "modelChoice": "1.7B",
+        "defaultLanguage": "Auto",
+        "voiceInstructField": "instruct",
+        "historyTimeoutMs": 300000,
+        "languages": [
+          {
+            "id": "Auto",
+            "label": "Auto"
+          },
+          {
+            "id": "English",
+            "label": "English"
+          },
+          {
+            "id": "Chinese",
+            "label": "Chinese"
+          },
+          {
+            "id": "Japanese",
+            "label": "Japanese"
+          },
+          {
+            "id": "Korean",
+            "label": "Korean"
+          },
+          {
+            "id": "Hindi",
+            "label": "Hindi"
+          },
+          {
+            "id": "French",
+            "label": "French"
+          },
+          {
+            "id": "German",
+            "label": "German"
+          },
+          {
+            "id": "Spanish",
+            "label": "Spanish"
+          },
+          {
+            "id": "Portuguese",
+            "label": "Portuguese"
+          },
+          {
+            "id": "Russian",
+            "label": "Russian"
+          },
+          {
+            "id": "Italian",
+            "label": "Italian"
+          }
+        ]
+      }
+    },
+    {
+      "id": "image-compress",
+      "name": "image-compress",
+      "modality": "image",
+      "task": "compress-image",
+      "file": "image-compress.json",
+      "imageNode": "1",
+      "requiresImage": true,
+      "requiresPrompt": false,
+      "ui": {
+        "imageLayout": "single-primary",
+        "uploadLabel": "Your image",
+        "hidePrompt": true,
+        "hideAspectRatio": true
+      },
+      "imageCompress": {
+        "scaleNode": "2",
+        "defaultScale": 1,
+        "scaleMin": 0.25,
+        "scaleMax": 1,
+        "scaleStep": 0.05,
+        "defaultFormat": "webp",
+        "formats": [
+          "webp",
+          "jpeg",
+          "png",
+          "webp-lossless"
+        ],
+        "saveNodes": [
+          {
+            "node": "3",
+            "format": "webp",
+            "fileTypeField": "file_type",
+            "fileType": "WEBP (lossy)"
+          },
+          {
+            "node": "4",
+            "format": "jpeg",
+            "fileTypeField": "file_type",
+            "fileType": "JPEG"
+          },
+          {
+            "node": "5",
+            "format": "png",
+            "fileTypeField": "file_type",
+            "fileType": "PNG"
+          },
+          {
+            "node": "6",
+            "format": "webp-lossless",
+            "fileTypeField": "file_type",
+            "fileType": "WEBP (lossless)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "qwen3-asr-transcribe",
+      "name": "qwen3-asr-transcribe",
+      "modality": "audio",
+      "task": "transcribe",
+      "file": "qwen3-asr-transcribe.json",
+      "outputType": "text",
+      "requiresImage": false,
+      "requiresAudio": true,
+      "requiresPrompt": false,
+      "ui": {
+        "imageLayout": "none",
+        "hidePrompt": true,
+        "audioUploadLabel": "Audio to transcribe"
+      },
+      "audioInputs": [
+        {
+          "node": "1",
+          "label": "Audio",
+          "required": true
+        }
+      ],
+      "asr": {
+        "loadAudioNode": "1",
+        "loaderNode": "2",
+        "transcribeNode": "3",
+        "outputNode": "4",
+        "defaultModelSize": "0.6B",
+        "modelSizes": [
+          {
+            "id": "0.6B",
+            "label": "Fast",
+            "repoId": "Qwen/Qwen3-ASR-0.6B"
+          },
+          {
+            "id": "1.7B",
+            "label": "Best quality",
+            "repoId": "Qwen/Qwen3-ASR-1.7B"
+          }
+        ],
+        "defaultPrecision": "bf16",
+        "defaultLanguage": "auto",
+        "languages": [
+          {
+            "value": "auto",
+            "label": "Auto-detect"
+          },
+          {
+            "value": "Korean",
+            "label": "Korean"
+          },
+          {
+            "value": "English",
+            "label": "English"
+          },
+          {
+            "value": "Japanese",
+            "label": "Japanese"
+          },
+          {
+            "value": "Chinese",
+            "label": "Chinese"
+          },
+          {
+            "value": "Hindi",
+            "label": "Hindi"
+          },
+          {
+            "value": "Spanish",
+            "label": "Spanish"
+          },
+          {
+            "value": "French",
+            "label": "French"
+          },
+          {
+            "value": "German",
+            "label": "German"
+          }
+        ],
+        "historyTimeoutMs": 300000
+      }
+    },
+    {
+      "id": "redrob-tune-music",
+      "name": "redrob-tune-music",
+      "modality": "audio",
+      "task": "music",
+      "engine": "redrob-tune",
+      "file": "redrob-tune-music.json",
+      "outputType": "audio",
+      "requiresImage": false,
+      "requiresPrompt": true,
+      "promptNode": "94",
+      "promptField": "tags",
+      "defaultPrompt": "pop, upbeat, female vocal, bright synths, catchy hook",
+      "ui": {
+        "imageLayout": "none",
+        "promptLabel": "Style tags / caption",
+        "promptPlaceholder": "Genre, mood, instruments, vocal style — e.g. indie pop, warm guitar, soft female vocal, rainy afternoon",
+        "promptHint": "Use a full natural-language caption for Redrob Tune Fast / Pro (not short tag lists). Lyrics use [Verse] / [Chorus]; put stage notes after an em dash inside the brackets.",
+        "lyricsLabel": "Lyrics & structure",
+        "lyricsPlaceholder": "[Intro — soft Rhodes, brushed drums]\n[Verse]\nLine one of the verse\nLine two of the verse\n\n[Chorus]\nHook line that repeats\nSecond hook line",
+        "audioUploadLabel": "Reference audio (optional — 30s timbre)"
+      },
+      "audioInputs": [
+        {
+          "node": "6",
+          "label": "Reference audio (optional)",
+          "required": false
+        }
+      ],
+      "music": {
+        "engine": "redrob-tune",
+        "unetNode": "104",
+        "clipNode": "105",
+        "vaeNode": "106",
+        "samplingNode": "78",
+        "apgNode": "79",
+        "encodeNode": "94",
+        "latentNode": "98",
+        "samplerNode": "3",
+        "saveNode": "107",
+        "refAudioNode": "6",
+        "refTrimNode": "9",
+        "refEncodeNode": "7",
+        "refTimbreNode": "8",
+        "defaultSeconds": 60,
+        "secondsMin": 10,
+        "secondsMax": 600,
+        "defaultModelVersion": "redrob-tune-fast",
+        "defaultBpm": 120,
+        "defaultKeyScale": "E minor",
+        "defaultTimeSignature": "4",
+        "defaultLanguage": "en",
+        "defaultGenerateAudioCodes": true,
+        "defaultLmCfg": 2,
+        "defaultTemperature": 0.85,
+        "refTrimSeconds": 30,
+        "models": [
+          {
+            "id": "redrob-tune-fast",
+            "label": "Redrob Tune Fast",
+            "description": "Quick drafts — good for iterating style and lyrics."
+          },
+          {
+            "id": "redrob-tune-pro",
+            "label": "Redrob Tune Pro",
+            "description": "Highest polish — APG guidance (avoids muddy native CFG)."
+          }
+        ],
+        "historyTimeoutMs": 900000
+      }
+    },
+    {
+      "id": "video-extract-audio",
+      "name": "video-extract-audio",
+      "modality": "audio",
+      "task": "extract-audio",
+      "file": "video-extract-audio.json",
+      "outputType": "audio",
+      "requiresVideo": true,
+      "requiresImage": false,
+      "requiresPrompt": false,
+      "ui": {
+        "imageLayout": "none",
+        "hidePrompt": true,
+        "videoUploadLabel": "Video file"
+      },
+      "videoInputs": [
+        {
+          "node": "1",
+          "label": "Video",
+          "required": true
+        }
+      ],
+      "videoExtract": {
+        "loadNode": "1",
+        "saveNode": "2",
+        "historyTimeoutMs": 300000
+      }
+    },
+    {
+      "id": "audio-convert",
+      "name": "audio-convert",
+      "modality": "audio",
+      "task": "convert-audio",
+      "file": "audio-convert.json",
+      "outputType": "audio",
+      "requiresAudio": true,
+      "requiresImage": false,
+      "requiresPrompt": false,
+      "ui": {
+        "imageLayout": "none",
+        "hidePrompt": true,
+        "audioUploadLabel": "Audio to convert"
+      },
+      "audioInputs": [
+        {
+          "node": "1",
+          "label": "Audio",
+          "required": true
+        }
+      ],
+      "audioConvert": {
+        "defaultFormat": "mp3",
+        "formats": [
+          "mp3",
+          "flac",
+          "opus"
+        ],
+        "saveNodes": [
+          {
+            "node": "2",
+            "format": "mp3",
+            "qualityField": "quality",
+            "quality": "320k"
+          },
+          {
+            "node": "3",
+            "format": "flac",
+            "formatField": "format",
+            "fileFormat": "flac"
+          },
+          {
+            "node": "4",
+            "format": "opus",
+            "qualityField": "quality",
+            "quality": "192k"
+          }
+        ]
+      }
+    },
+    {
+      "id": "image-convert",
+      "name": "image-convert",
+      "modality": "image",
+      "task": "convert-image",
+      "file": "image-convert.json",
+      "imageNode": "1",
+      "requiresImage": true,
+      "requiresPrompt": false,
+      "ui": {
+        "imageLayout": "single-primary",
+        "uploadLabel": "Your image",
+        "hidePrompt": true,
+        "hideAspectRatio": true
+      },
+      "imageConvert": {
+        "defaultFormat": "png",
+        "formats": [
+          "png",
+          "jpeg",
+          "webp",
+          "webp-lossless"
+        ],
+        "saveNodes": [
+          {
+            "node": "2",
+            "format": "png",
+            "fileTypeField": "file_type",
+            "fileType": "PNG"
+          },
+          {
+            "node": "3",
+            "format": "jpeg",
+            "fileTypeField": "file_type",
+            "fileType": "JPEG"
+          },
+          {
+            "node": "4",
+            "format": "webp",
+            "fileTypeField": "file_type",
+            "fileType": "WEBP (lossy)"
+          },
+          {
+            "node": "5",
+            "format": "webp-lossless",
+            "fileTypeField": "file_type",
+            "fileType": "WEBP (lossless)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "qwenvl-vision",
+      "name": "qwenvl-vision",
+      "modality": "image",
+      "task": "vision",
+      "file": "vision.json",
+      "outputType": "text",
+      "requiresImage": true,
+      "requiresPrompt": false,
+      "promptNode": "2",
+      "promptField": "custom_prompt",
+      "ui": {
+        "imageLayout": "single-primary",
+        "uploadLabel": "Image to analyze",
+        "hideAspectRatio": true,
+        "promptLabel": "Question (optional)",
+        "promptPlaceholder": "Ask something about the image, or leave blank to use the mode below…"
+      },
+      "imageInputs": [
+        {
+          "node": "1",
+          "label": "Image",
+          "required": true
+        }
+      ],
+      "vlm": {
+        "inferNode": "2",
+        "outputNode": "3",
+        "model": "Qwen2.5-VL-7B-Instruct",
+        "defaultMode": "detailed",
+        "modes": [
+          {
+            "id": "detailed",
+            "label": "Describe (detailed)",
+            "preset": "🖼️ Detailed Description"
+          },
+          {
+            "id": "simple",
+            "label": "Describe (short)",
+            "preset": "🖼️ Simple Description"
+          },
+          {
+            "id": "tags",
+            "label": "Tags",
+            "preset": "🖼️ Tags"
+          },
+          {
+            "id": "prompt",
+            "label": "Reverse prompt",
+            "preset": "🪄 Prompt Refine & Expand"
+          },
+          {
+            "id": "cinematic",
+            "label": "Cinematic",
+            "preset": "🎬 Cinematic Description"
+          },
+          {
+            "id": "analysis",
+            "label": "Analysis",
+            "preset": "🖼️ Detailed Analysis"
+          },
+          {
+            "id": "ocr",
+            "label": "Extract text (OCR)",
+            "instruction": "Read and transcribe every piece of text visible in this image exactly, preserving line breaks and reading order. Output only the extracted text with no commentary. If there is no text, reply 'No text found.'"
+          },
+          {
+            "id": "product",
+            "label": "Product copy",
+            "instruction": "You are an e-commerce copywriter. Based only on what is visible, write a product listing: a one-line title, a 2-3 sentence description, 4-6 bullet-point features, and 8-12 relevant hashtags. Use plain text with simple labels, no markdown."
+          },
+          {
+            "id": "critique",
+            "label": "Critique",
+            "instruction": "Act as an art director reviewing this image. Give concise, constructive feedback: what works, what weakens it (composition, lighting, color, subject, artifacts), and 3-5 specific, actionable suggestions to improve it. No preamble."
+          },
+          {
+            "id": "json",
+            "label": "Tags (JSON)",
+            "instruction": "Analyze the image and output a compact JSON object with keys: subject, objects (array), setting, colors (array), lighting, mood, style, and tags (array of up to 20 short strings). Output only valid JSON with no markdown fences or commentary."
+          },
+          {
+            "id": "moderation",
+            "label": "Safety moderation",
+            "instruction": "You are a strict image safety moderator for an SFW image product. Classify the image into exactly one outcome:\n- safe-output: no nudity, no sexual acts, no explicit genitalia; may be mildly suggestive clothing only if not sexualized\n- fail-suggestive: soft NSFW, lingerie/underwear focus, sexual posing, heavy cleavage/bulge emphasis, or erotic atmosphere without clear genitalia/sex acts\n- fail-explicit: clear nudity with genitalia, sexual intercourse/acts, or pornographic intent\nRespond with ONLY valid JSON (no markdown fences): {\"outcome\":\"safe-output\"|\"fail-suggestive\"|\"fail-explicit\",\"confidence\":0.0-1.0,\"rationale\":\"one short sentence\"}"
+          }
+        ],
+        "historyTimeoutMs": 300000
+      }
+    }
+  ]
+}

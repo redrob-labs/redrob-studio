@@ -1,0 +1,28 @@
+{
+  "1": {
+    "inputs": {
+      "video": "input.mp4",
+      "force_rate": 0,
+      "custom_width": 0,
+      "custom_height": 0,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "Load video"
+    }
+  },
+  "2": {
+    "inputs": {
+      "audio": ["1", 2],
+      "filename_prefix": "audio/ComfyUI",
+      "quality": "320k"
+    },
+    "class_type": "SaveAudioMP3",
+    "_meta": {
+      "title": "Save audio"
+    }
+  }
+}

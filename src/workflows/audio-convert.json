@@ -1,0 +1,44 @@
+{
+  "1": {
+    "inputs": {
+      "audio": "input.wav"
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "Load audio"
+    }
+  },
+  "2": {
+    "inputs": {
+      "audio": ["1", 0],
+      "filename_prefix": "audio/ComfyUI",
+      "quality": "320k"
+    },
+    "class_type": "SaveAudioMP3",
+    "_meta": {
+      "title": "Save MP3"
+    }
+  },
+  "3": {
+    "inputs": {
+      "audio": ["1", 0],
+      "filename_prefix": "audio/ComfyUI",
+      "format": "flac"
+    },
+    "class_type": "SaveAudio",
+    "_meta": {
+      "title": "Save FLAC"
+    }
+  },
+  "4": {
+    "inputs": {
+      "audio": ["1", 0],
+      "filename_prefix": "audio/ComfyUI",
+      "quality": "192k"
+    },
+    "class_type": "SaveAudioOpus",
+    "_meta": {
+      "title": "Save Opus"
+    }
+  }
+}
