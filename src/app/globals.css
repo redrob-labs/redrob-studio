@@ -1,0 +1,175 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: 'Pretendard', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Pretendard', ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.968 0.007 247.896);
+  --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
+  --ring: oklch(0.704 0.04 256.788);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .font-display {
+    font-family: 'Pretendard', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Korean: keep words intact; wrap at spaces / phrase boundaries. */
+  html[lang='ko'],
+  html.locale-ko {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    line-break: strict;
+  }
+
+  html[lang='ko'] body,
+  html.locale-ko body {
+    letter-spacing: -0.01em;
+    line-height: 1.65;
+  }
+
+  html[lang='ko'] h1,
+  html[lang='ko'] h2,
+  html[lang='ko'] h3,
+  html.locale-ko h1,
+  html.locale-ko h2,
+  html.locale-ko h3 {
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+    line-height: 1.35;
+  }
+
+  html[lang='ko'] p,
+  html[lang='ko'] li,
+  html[lang='ko'] label,
+  html[lang='ko'] [data-slot='alert-description'],
+  html.locale-ko p,
+  html.locale-ko li,
+  html.locale-ko label {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  /* Code / mono / prompts: allow normal wrapping so URLs and paths do not explode layout. */
+  html[lang='ko'] pre,
+  html[lang='ko'] code,
+  html[lang='ko'] .font-mono,
+  html[lang='ko'] textarea,
+  html.locale-ko pre,
+  html.locale-ko code,
+  html.locale-ko .font-mono,
+  html.locale-ko textarea {
+    word-break: normal;
+    overflow-wrap: break-word;
+    line-break: auto;
+    letter-spacing: 0;
+  }
+
+  /* Longer Korean labels on chips / ghost buttons may wrap instead of clipping. */
+  html[lang='ko'] [data-slot='button']:not([data-size='icon']),
+  html.locale-ko [data-slot='button']:not([data-size='icon']) {
+    white-space: normal;
+    word-break: keep-all;
+    text-align: center;
+    line-height: 1.35;
+  }
+
+  button:not(:disabled),
+  [type='button']:not(:disabled),
+  [type='submit']:not(:disabled),
+  [type='reset']:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  a[href],
+  summary,
+  [data-slot='button']:not(:disabled),
+  [data-slot='select-trigger']:not(:disabled),
+  [data-slot='select-item']:not([data-disabled]),
+  [data-slot='select-scroll-up-button'],
+  [data-slot='select-scroll-down-button'],
+  label:has(input),
+  label[for],
+  input[type='checkbox']:not(:disabled),
+  input[type='radio']:not(:disabled),
+  input[type='range']:not(:disabled) {
+    @apply cursor-pointer select-none;
+  }
+
+  button:disabled,
+  [data-slot='button']:disabled,
+  [data-slot='select-trigger']:disabled,
+  [role='button'][aria-disabled='true'] {
+    @apply cursor-not-allowed;
+  }
+}
