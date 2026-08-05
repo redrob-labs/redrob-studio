@@ -4,7 +4,7 @@ English | [한국어](./README.ko.md)
 
 A Next.js studio for image, audio, and video tools, backed by ComfyUI running on your own local GPU. Nothing is sent to a hosted inference API: the web app talks to a ComfyUI process you control.
 
-Built by Janghoon Lee for Redrob. Licensed under the Apache License 2.0.
+Built by Janghoon Lee (이장훈) for Redrob. Licensed under the Apache License 2.0.
 
 ## Requirements
 
@@ -140,7 +140,7 @@ python main.py --listen 127.0.0.1 --port 8188
 
 ## License and attribution
 
-Copyright 2026 Redrob. Built by Janghoon Lee.
+Copyright 2026 Redrob. Built by Janghoon Lee (이장훈).
 
 Original code in this repository is licensed under the Apache License 2.0. See [`LICENSE`](LICENSE) for the full text and [`NOTICE`](NOTICE) for attribution.
 

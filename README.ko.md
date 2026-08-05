@@ -4,7 +4,7 @@
 
 로컬 GPU의 ComfyUI를 백엔드로 쓰는 Next.js 스튜디오입니다. 이미지·음성·영상 도구를 브라우저에서 돌리고, 호스팅된 추론 API로는 보내지 않습니다. 웹앱이 직접 통제하는 ComfyUI 프로세스와만 통신합니다.
 
-Janghoon Lee가 Redrob를 위해 만들었습니다. 라이선스는 Apache License 2.0입니다.
+이장훈 (Janghoon Lee)이 Redrob를 위해 만들었습니다. 라이선스는 Apache License 2.0입니다.
 
 ## 요구 사항
 
@@ -140,7 +140,7 @@ python main.py --listen 127.0.0.1 --port 8188
 
 ## 라이선스와 고지
 
-Copyright 2026 Redrob. Built by Janghoon Lee.
+Copyright 2026 Redrob. Built by 이장훈 (Janghoon Lee).
 
 이 저장소의 원본 코드는 Apache License 2.0입니다. 전문은 [`LICENSE`](LICENSE), 고지는 [`NOTICE`](NOTICE)를 보세요.
 
