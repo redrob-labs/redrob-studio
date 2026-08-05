@@ -1,0 +1,412 @@
+{
+  "version": 1,
+  "suite": "image-comparison",
+  "description": "Redrob Image Create eval (30 non-typography prompts). Weights: savagemanage/redrob-image.",
+  "rating": "sfw",
+  "path": "sfw",
+  "modality": "image",
+  "scoring": "preference",
+  "loraRecipeSet": "all",
+  "workflows": ["redrob-image"],
+  "notes": [
+    "v13: Single Create stack - Redrob Image from https://huggingface.co/savagemanage/redrob-image.",
+    "Typography prompts excluded (known weak)."
+  ],
+  "prompts": [
+    {
+      "id": "redrob-3d-toy",
+      "style": "animation",
+      "subject": "3d-toy-character",
+      "difficulty": "medium",
+      "tags": [
+        "fal-guide",
+        "animation",
+        "3d",
+        "medium"
+      ],
+      "prompt": "Stylized 3D toy character on a solid cobalt blue background. The figure features an oversized head, large black eyes, and pink-purple hair in twin buns. It wears a textured blue sweater, green shirt, patterned blue pants, and chunky black-and-white metallic-soled sneakers. A black crossbody strap with a white buckle crosses the chest. Smooth studio lighting highlights vibrant matte textures."
+    },
+    {
+      "id": "redrob-anime-psychedelic",
+      "style": "illustration",
+      "subject": "anime",
+      "difficulty": "hard",
+      "tags": [
+        "anime",
+        "japanese",
+        "psychedelic",
+        "dynamic"
+      ],
+      "prompt": "A highly detailed, vibrant anime-style illustration of a young Japanese female character with teal-blue hair styled in twin high pigtails adorned with black and pink mechanical accessories, wide glowing cyan eyes with dilated pupils, sharp fangs bared in an aggressive grin, tongue extended forward, and a muscular, slender body with exaggerated proportions typical of anime aesthetics, wearing a black form-fitting outfit with neon accents and mechanical arm components, positioned mid-action in a dynamic low-angle shot surrounded by explosive, swirling psychedelic paint splatters in neon pink, electric blue, yellow, and magenta hues that dominate the frame, with the character's body partially submerged in the chaotic liquid effect, her arms outstretched as if grappling or bursting through the medium, set against a stark black void background with no discernible environment, illuminated by intense, high-contrast artificial lighting that emphasizes the glossy, dripping textures and creates deep shadows to enhance the sense of motion and visceral energy, rendered in a hyper-stylized digital illustration style with sharp lines, saturated colors, and high-resolution detail, capturing a frenetic, erotic, and chaotic mood with an emphasis on visual overload and kinetic tension."
+    },
+    {
+      "id": "redrob-bridge-landscape",
+      "style": "photography",
+      "subject": "golden-gate-bridge",
+      "difficulty": "hard",
+      "tags": [
+        "fal-guide",
+        "photography",
+        "landscape",
+        "large"
+      ],
+      "prompt": "A towering rust-orange suspension bridge stretches across deep blue-green water beneath a bright sky. Photographed from a low vantage point on the water, choppy waves and white sea foam churn in the immediate foreground. The bridge features massive vertical towers with intricate cross-bracing, supporting sweeping main cables and fine suspender ropes. Rolling, sunlit hills with earthy brown slopes and sparse green vegetation form the distant coastline, where tiny white sailboats glide near the rugged shore. The pale blue sky is lightly textured with scattered wispy cirrus clouds. Clear, natural daytime sunlight illuminates the vibrant orange steel structure, creating a sharp visual contrast against the muted earthy tones of the distant landscape and the dark, textured surface of the water."
+    },
+    {
+      "id": "redrob-cat-corgi",
+      "style": null,
+      "subject": null,
+      "difficulty": null,
+      "tags": [
+        "poster",
+        "graphics",
+        "grainy-stack",
+        "civitai"
+      ],
+      "prompt": "analog image, film grain, saturated color, high contrast long shadows, artistic framing, almost cinematic feel, This minimalist digital illustration captures a charming animal scene peeking over a solid ledge, shifting the mood to something cute, friendly, and filled with character. The black cat's silhouette remains a dark, soft-edged shadow with alert, pointed ears framing the center-left of the composition. However, its large, round eyes now glow with a vibrant gradient that incorporates deep violet and electric purple tones, narrowing slightly into a pair of thin, vertical black pupils that give the feline a slightly annoyed, grumpy expression. A tiny, luminous magenta nose sits beneath its gaze, adding a whimsical touch to its comical irritation. Sitting right beside the cat is an adorable, fluffy corgi silhouette that brings a burst of friendly warmth to the piece. The corgi's signature large, rounded ears perk up joyfully, and its head is tilted slightly with a soft, bright smile evident in its silhouette. A heavy, stippled noise texture coats both animals, giving their edges a fuzzy, airbrushed quality that feels like a cozy, vintage risograph print or a grainy pastel drawing, perfectly maintaining the signature retro art style while leaning into a playful dynamic. The background frames the duo with a smooth, horizontal gradient sky that evokes a serene, colorful sunset. The top half of the frame is a calm turquoise blue that blends seamlessly down into a radiant, warm coral pink, casting a soft aura behind the contrasting animal shapes. The lower foreground ledge mirrors these colorful tones, shaded in deep purple and violet hues that ground the artwork in a cohesive, neon-infused color palette, turning the scene into a delightful, story-filled interaction between a grumpy cat and a happy pup."
+    },
+    {
+      "id": "redrob-denim-editorial",
+      "style": "portrait-fashion",
+      "subject": "fashion-editorial-denim",
+      "difficulty": "hard",
+      "tags": [
+        "fal-guide",
+        "fashion",
+        "editorial",
+        "medium"
+      ],
+      "prompt": "dynamic angle of a model lying on the floor, wearing dark denim jeans and white socks with brown shoes, posing for an advertising campaign for Levi or Gap denim jeans. He is posed as if he is tightly trapped within the composition of the photo. while wearing a light grey long-sleeve shirt and a navy jacket. His face is clean-shaven. Photographed in the style of Tim Walker."
+    },
+    {
+      "id": "redrob-east-relief",
+      "style": "illustration",
+      "subject": "diorama",
+      "difficulty": "hard",
+      "tags": [
+        "japanese",
+        "chinese",
+        "relief",
+        "3d",
+        "festive"
+      ],
+      "prompt": "A 3D layered relief masterpiece blending traditional Japanese and Chinese motifs, presented as an intricate circular diorama against a deep, textured crimson red background. On the left, a dark, multi-tiered Japanese pagoda emerges from frothy, sculpted white and dark grey stormy waves. On the right, ornate Chinese temple pavilions sit upon swirling, golden-red auspicious clouds. The two architectural styles are united by stylized orange-red bonsai trees, a flock of silhouetted black birds flying across a large, textured, glowing amber-gold sun. Delicate golden fireworks sparks and subtle vertical gold calligraphy accents adorn the upper areas. The art style resembles heavy embossed clay, felt, and intricate paper-cutting with deep, dramatic drop shadows. A striking contrast between the fiery crimson and gold foregrounds and the dark, obsidian-like cosmic background, capturing a highly tactile, festive, and majestic 3D landscape where Eastern cultures meet."
+    },
+    {
+      "id": "redrob-egirl-selfie",
+      "style": "photography",
+      "subject": "portrait",
+      "difficulty": "medium",
+      "tags": [
+        "korean",
+        "egirl",
+        "selfie",
+        "kawaii",
+        "mirror"
+      ],
+      "prompt": "A cute asian e-girl in her early twenties takes a mirror selfie, korean girl, cute, kawaii, flashing a peace sign with a playful pout. She has doe eyes, dewy skin, pink blush across her nose, and winged eyeliner with a tiny heart drawn underneath. Her black hair in twintails with butterfly clips. She's wearing an oversized anime tee, layered chokers, and fishnet arm warmers.\nHer bedroom glows with pink and blue LED lights. A gaming setup with RGB keyboard sits nearby, surrounded by anime figures, plushies, and K-pop posters. Stickers cover her phone case, kawaii gamer girl vibes."
+    },
+    {
+      "id": "redrob-fishing-cat",
+      "style": "hybrid",
+      "subject": "animals",
+      "difficulty": "hard",
+      "tags": [
+        "photoreal",
+        "chibi",
+        "2d-overlay",
+        "sony"
+      ],
+      "prompt": "amazing details, high-quality HD, shot on a Sony A7R IV, 50mm f/1.8 lens, a professional real-life photograph of a small pond with a small dock resting on its surface. A light mist settles on its surface, indicating a damp, cold morning. A chibi cat is sitting on the end of the dock, its tiny feet dipped into the cool water. It wears a cute little fisherman's outfit including a fisherman's hat decorated with various lures. As the cat focuses its gaze onto the water's surface, it holds a fishing pole in its tiny paws, its line cast into the water, with a small red fishing bobber resting on the pond's surface. Small ripples due to the bobber's presence are visible on the pond's surface. Its face expressing a happy look as its eyes are focused on the bobber. The cute and relaxing atmosphere is captured perfectly. The cat is a 2D hand-drawn sketch drawn with colored pens. A professional image taken from a Sony A7R IV, 50mm f/1.8 lens, resembling real-life photography, natural lighting, professional photography, soft natural lighting, realistic depth of field, shallow depth of field."
+    },
+    {
+      "id": "redrob-giant-kitten",
+      "style": "photography",
+      "subject": "surreal",
+      "difficulty": "hard",
+      "tags": [
+        "photoreal",
+        "scale",
+        "london",
+        "animals"
+      ],
+      "prompt": "A photorealistic, intricately detailed cinematic scene of a gigantic white fluffy kitten, approximately 80 meters tall, peacefully wandering through the streets surrounding Tower Bridge in London. The perspective is captured from street level with a dramatic wide-angle lens, emphasizing the kitten's overwhelming scale as it towers above historic buildings and iconic London architecture. The kitten has luxuriously soft long white fur with millions of individually visible strands, slightly dusty around its paws and lower legs from exploring the city. Its oversized paws, bright curious eyes, expressive ears, long whiskers, pink nose, and gentle, innocent expression make it irresistibly adorable despite its immense size. The kitten is playfully reaching out with one enormous paw to bat at a classic bright red London double-decker bus, gently crumpling the roof, cracking windows, and tilting the bus onto one side without appearing malicious. The surrounding streets show mild accidental damage including cracked pavement, bent traffic lights, damaged street signs, toppled lamp posts, crushed parked cars, broken brick walls, scattered masonry, and debris left behind by the kitten's curious exploration. Tower Bridge dominates the background, framed by authentic London streets under a cool overcast sky with soft diffused lighting that produces realistic shadows and natural color tones. A handful of people are running away in surprise while one brave tourist stands at a safe distance, smiling as they take a selfie with the enormous kitten behind them. Every surface features extraordinary texture detail, including weathered stone architecture, realistic asphalt, reflective glass, detailed vehicle damage, and incredibly lifelike fur rendered with extreme realism. Cinematic composition, HDR photography, physically accurate lighting, global illumination, volumetric atmosphere, subtle depth of field, razor-sharp focus, natural color grading, masterpiece-quality environmental storytelling, hyperrealistic textures, and breathtaking photorealism."
+    },
+    {
+      "id": "redrob-grainy-city",
+      "style": null,
+      "subject": null,
+      "difficulty": null,
+      "tags": [
+        "grain",
+        "city"
+      ],
+      "prompt": "purple grainy photography of a foggy city street at blue hour, film grain, muted tones, subtle edge softness, documentary still"
+    },
+    {
+      "id": "redrob-grainy-portrait",
+      "style": null,
+      "subject": null,
+      "difficulty": null,
+      "tags": [
+        "grain",
+        "muted"
+      ],
+      "prompt": "grainy film photography portrait outdoors, muted color grading, soft edge blur, moody cinematic grain, natural skin texture"
+    },
+    {
+      "id": "redrob-katana-yellow",
+      "style": "photography",
+      "subject": "portrait",
+      "difficulty": "hard",
+      "tags": [
+        "photoreal",
+        "katana",
+        "cyberpunk",
+        "yellow",
+        "tattoos"
+      ],
+      "prompt": "A hyper-detailed photorealistic close-up of a young Caucasian female with high-resolution facial features, including pale skin, sharp defined cheekbones, glossy yellow eyes with long black lashes, and a neutral yet intense gaze directed slightly off-center at the viewer, holding a black katana with intricate yellow flame-like engravings on its scabbard and wrapped in black cord with tassels; her short straight black hair with blunt bangs frames her face, adorned with multiple silver nose piercings, a black tactical mask pulled up to her chin revealing only her lips and lower face, and elaborate silver chain earrings with cross motifs; her left arm is heavily tattooed with a large menacing dragon design in black and yellow ink, wearing a black leather combat vest with zippers and metal buckles over a black armored bodysuit, standing against a vibrant solid yellow background with no other objects or characters present, shot from a low-angle eye-level perspective emphasizing her dominance, with dramatic high-contrast studio lighting casting sharp shadows and specular highlights on her skin and weapon, capturing ultra-sharp detail with no blur or noise, rendered in 8K cinematic realism with deep depth of field isolating the subject from the background, dominated by electric yellow and stark black tones, evoking a mood of lethal elegance and cyberpunk mystique."
+    },
+    {
+      "id": "redrob-kitten-tree",
+      "style": null,
+      "subject": null,
+      "difficulty": null,
+      "tags": [
+        "grain",
+        "whimsical",
+        "animals",
+        "civitai"
+      ],
+      "prompt": "A sturdy old tree with wide horizontal branches, dozens of tiny fluffy kittens perched all over every branch like plump fruit, calico, tabby and white kittens balancing and clinging with oversized paws, some peeking over branches with huge curious eyes, warm afternoon sunlight filtering through, whimsical storybook atmosphere, ground below scattered with a few kittens already climbing down, hinting the tree will soon be bare"
+    },
+    {
+      "id": "redrob-light-vortex",
+      "style": "photography",
+      "subject": "street",
+      "difficulty": "hard",
+      "tags": [
+        "zidiusArt",
+        "bw",
+        "long-exposure",
+        "bokeh",
+        "street"
+      ],
+      "prompt": "zidiusArt, A cinematic, high-contrast black and white long-exposure photograph. Two silhouetted figures walking away down a dark, wet asphalt road. Above them, a spectacular, swirling vortex of motion-blurred white light trails arc across the night sky, punctuated by vibrant, out-of-focus multi-colored bokeh circles (red, blue, green, purple). The ground features sharp reflections and cast shadows from the figures. Moody atmosphere, street photography style, surreal urban nightscape, artistic lighting, sharp focus on the subjects, deep shadows, dreamlike aesthetic, 8k resolution"
+    },
+    {
+      "id": "redrob-pink-motel",
+      "style": "photography",
+      "subject": "surreal",
+      "difficulty": "hard",
+      "tags": [
+        "surreal",
+        "desert",
+        "motel",
+        "portra",
+        "purple"
+      ],
+      "prompt": "Name: none\nAction: view through empty window frame, desert of white sparkling sand stretching to horizon, row of identical pink motel doors standing slightly ajar in distance, small dark shapes moving between them\nMood: vast, alien, beckoning\nAppearence: none\nOutfit: none\n#\nSetting: desert landscape under grape soda purple sky, mirror-crushed sand, surreal architecture repeating infinitely\nLighting: bioluminescent sky gradient from violet to magenta, sand reflecting sharp pinpoints of light, long shadows from door frames\n\n\nPortra 400 film, natural grain, cinematic shot, "
+    },
+    {
+      "id": "redrob-pixel-mask",
+      "style": null,
+      "subject": null,
+      "difficulty": null,
+      "tags": [
+        "grain",
+        "portrait",
+        "glitch",
+        "bw",
+        "civitai"
+      ],
+      "prompt": "film grain, low contrast, long shadows, almost cinematic feel, moody photography, b&w photography This black and white portrait, rich in film grain, shows a man in profile, his face completely masked by a dense, fluid mass of swirling black and grey pixels and data-like horizontal lines. He has a slender build and dark, wavy hair combed back, with only his ear and jawline visible beneath the visual distortion. He is wearing a dark, tailored suit jacket over a crisp white shirt and a subtly patterned tie, his hand holding a smartphone up towards the pixelated void in a pose that merges human form with digital abstraction. The background is a stark, textured urban environment, with concrete pillars and a barred window hinting at an industrial or public space. The lighting is diffused but dramatic, casting soft, yet defined shadows that highlight the textures of his clothing and the harsh edges of the distortion, creating a scene of jarring contrast. The overall mood is unsettling and introspective, capturing an uncanny intersection of technology and identity in a raw, analog-film aesthetic."
+    },
+    {
+      "id": "redrob-red-cat",
+      "style": null,
+      "subject": null,
+      "difficulty": null,
+      "tags": [
+        "poster",
+        "graphics",
+        "civitai"
+      ],
+      "prompt": "A striking, high-contrast graphic poster features the stark black silhouette of a cat's head peeking over a textured horizontal barrier. The composition is defined by its minimalist yet aggressive design, dominated by a raw, textured crimson red background. The cat's fur blends completely into the shadows, with only its pointed ears and piercing gaze defined against the backdrop. Its left eye glows with an intense, vivid yellow hue, while its right eye is cast in a darker, shadowed orange tone, creating a mesmerizing and slightly ominous focal point. The artwork heavily incorporates a gritty, low-fidelity analog texture with deep grain, fine scratches, and subtle print distortions. The red barrier in the foreground features heavy black ink distressing, mimicking a raw woodcut or screen-printed punk zine aesthetic. The clean, sharp geometry of the cat's silhouette clashing with the chaotic, stained textures of the background gives the overall piece a powerful, contemporary graphic design edge."
+    },
+    {
+      "id": "redrob-red-moon",
+      "style": "photography",
+      "subject": "urban",
+      "difficulty": "hard",
+      "tags": [
+        "night",
+        "moon",
+        "urban",
+        "35mm",
+        "wet-asphalt"
+      ],
+      "prompt": "A bright large red moon hangs overhead while a swirling vortex of luminous energy clings tightly around its dark rim, casting crimson radiance across the night sky. Below, the urban street pulses with continuous motion as headlights slice through darkness and pedestrians merge into a river of silhouettes that flow endlessly past the lens. Wet asphalt reflects the glowing red lunar light, mirroring chrome car bodies gleaming softly in the ambient glow. The scene captures grainy 35mm film texture under soft focus, where deep indigo shadows contrast against neon amber reflections on wet pavement to ground the atmosphere physically."
+    },
+    {
+      "id": "redrob-risograph-horse",
+      "style": "illustration",
+      "subject": "risograph-horse",
+      "difficulty": "medium",
+      "tags": [
+        "fal-guide",
+        "illustration",
+        "risograph",
+        "medium"
+      ],
+      "prompt": "a low-angle, tightly cropped shot of a quirky, minimalist horse character straddling a simplified astronaut, depicted in a naive flat illustration style with a grainy risograph texture, using bold black outlines and a vibrant, awkward color palette of teal, orange, and yellow against the astronaut's white suit."
+    },
+    {
+      "id": "redrob-robot-portrait",
+      "style": "surreal",
+      "subject": "cinematic-robot-portrait",
+      "difficulty": "hard",
+      "tags": [
+        "fal-guide",
+        "surreal",
+        "robot",
+        "medium"
+      ],
+      "prompt": "A robotic head in profile reflects a city skyline and trees under the warm, harsh glare of late-afternoon golden hour sunlight. The gleaming, polished metallic surface of the artificial face captures sharp, vibrant reflections of architectural structures and dense foliage. Direct, intense, directional lighting casts deep, solid, sharp-edged shadows across the precise mechanical components and jointed paneling of the head. The aesthetic mirrors crisp medium format analog color film photography, utilizing a highly saturated, warm palette dominated by bright golden hues, stark whites, inky shadow blacks, and rich amber undertones. The scene features a hyper-realistic, densely textured rendering quality with razor-sharp focus and fine organic film grain. The high-contrast, sun-drenched exposure powerfully defines the geometric forms, metallic luster, and complex mirrored properties of the robotic profile."
+    },
+    {
+      "id": "redrob-rooftop-pov",
+      "style": "illustration",
+      "subject": "urban",
+      "difficulty": "hard",
+      "tags": [
+        "rooftop",
+        "pov",
+        "golden-hour",
+        "city",
+        "concept-art"
+      ],
+      "prompt": "A cinematic first person rooftop view overlooking a vast modern city at golden sunset. The viewer's legs extend into the foreground, dangling over the edge of a tall skyscraper. They wear black cargo pants and worn black and white sneakers with loosely tied laces, emphasizing the casual urban perspective. Far below, countless high rise buildings fill the skyline, creating a dense metropolitan landscape with dramatic depth. A tall iconic skyscraper rises prominently near the center, framed by surrounding towers that gradually fade into atmospheric haze. The glowing sun sits low on the horizon, casting warm golden orange light across the city and reflecting off a distant river. Large dramatic clouds are illuminated with deep amber and purple tones, while long shadows stretch across the rooftops. Strong perspective, breathtaking sense of height, cinematic wide angle, painterly realism, rich orange and black color palette, urban atmosphere, adventurous mood, highly detailed architecture, golden hour lighting.g. concept art, sharp focus, harmony, serenity, tranquility, soft pastell colors,ambient occlusion, cozy ambient lighting, ,best quality,whispered, unseen secrets, fantasy, dreamlike, surrealism, sharp focus, rich in detail, dreamy, cinematic, trending on ArtStation, captivating, fantastical, splash art, photorealistic, concept art, sharp focus, harmony, mysterious glow, superb composition, DB4RZ, DB4RZ style painting, NeoPigma, in the style of cksc, anime, cyberpunk, a masterpiece, award winning"
+    },
+    {
+      "id": "redrob-sesame-street",
+      "style": "animation",
+      "subject": "sesame-street-horse",
+      "difficulty": "easy",
+      "tags": [
+        "fal-guide",
+        "animation",
+        "puppet",
+        "medium"
+      ],
+      "prompt": "sesame street style horse"
+    },
+    {
+      "id": "redrob-skeleton-doctor",
+      "style": "photography",
+      "subject": "humor",
+      "difficulty": "hard",
+      "tags": [
+        "humor",
+        "1970s",
+        "skeleton",
+        "hospital",
+        "film"
+      ],
+      "prompt": "Humorous photorealistic 1970s film style shot of a confused Caucasian male skeleton doctor, aged 30s, with high bone proportions, pale translucent skin texture, wide startled eyes, slightly open mouth, and intense gaze fixed on the X-ray film he holds up to light; skull-shaped head mirror reflector mounted on forehead, no hair, bare bones visible beneath long white lab coat that drapes loosely over torso and arms, coat unbuttoned at chest revealing ribcage and spine, holding in left hand a clear X-ray film depicting a perfectly detailed, oversized juicy hamburger with tiny bone fragments embedded within its structure, right hand gripping a cardboard box of French fries with visible grease stains and crumpled paper wrapper, standing in a dimly lit hospital clinic interior with muted blue-gray walls, flickering fluorescent lights overhead, scattered medical equipment and outdated monitors in shallow depth of field, low-angle camera shot emphasizing his skeletal stature and bewildered expression, grainy film texture with visible noise and scratches, cinematic lighting with harsh shadows and high contrast, warm amber highlights from overhead fluorescents, highly detailed, hyperrealistic rendering, 35mm film aesthetic, sharp focus on subject, bokeh blur in background, mood: ironic, absurd, dark humor, NSFW concept implied through exaggerated anatomical parody."
+    },
+    {
+      "id": "redrob-studio-portrait",
+      "style": "portrait-fashion",
+      "subject": "cinematic-studio-portrait",
+      "difficulty": "medium",
+      "tags": [
+        "fal-guide",
+        "fashion",
+        "portrait",
+        "medium"
+      ],
+      "prompt": "cinematic portrait photography, studio shot, model with closed eyes and head tilted back, wet-look black hair, glossy lips, chunky gold earring, silver chain strap, against a large defocused sphere background, dark studio, dramatic lighting, medium shot, soft focus, sensuous mood"
+    },
+    {
+      "id": "redrob-sword-double",
+      "style": "photography",
+      "subject": "abstract",
+      "difficulty": "hard",
+      "tags": [
+        "amateur",
+        "double-exposure",
+        "cyberpunk",
+        "sword",
+        "bw"
+      ],
+      "prompt": "Photo Style: A raw amateur photograph, natural skin texture, realistic lighting, slightly grainy, documentary style.\nabstract, high contrast, motion blur,double exposure,cinematic, dramatic, \nsymmetric,circle, cyberpunk, nsfw, battle pose, dynamic pose, dynamic angle, sword, black and white,"
+    },
+    {
+      "id": "redrob-ukiyo-cybertruck",
+      "style": "illustration",
+      "subject": "ukiyo-e-cybertruck",
+      "difficulty": "medium",
+      "tags": [
+        "fal-guide",
+        "illustration",
+        "ukiyo-e",
+        "medium"
+      ],
+      "prompt": "an ukiyo-e woodblock print of traffic including a cybertruck on the golden gate bridge."
+    },
+    {
+      "id": "redrob-urban-sanctuary",
+      "style": "concept-art",
+      "subject": "architecture",
+      "difficulty": "hard",
+      "tags": [
+        "architecture",
+        "blueprint",
+        "watercolor",
+        "concept-art"
+      ],
+      "prompt": "A sophisticated concept art illustration of a contemporary architectural masterpiece that blends technical precision with atmospheric artistry. The image combines the clean lines of a blueprint with the expressive textures of a moody digital painting. It depicts a multi-tiered urban sanctuary characterized by sweeping curves and sharp, geometric planes. Fine charcoal lines and delicate ink sketches outline the structural framework, while soft watercolor washes of deep indigo and warm ochre define the shadows and highlights. The building features expansive glass facades that reflect a vibrant, hazy cityscape. Layers of transparency reveal the interior layout, showing floating walkways and lush indoor forests. The composition uses a vertical perspective, looking upward from a bustling plaza, making the structure feel monumental and towering. Golden light spills from the windows, illuminating the surrounding mist and creating a sense of tranquil sanctuary amidst a high-tech metropolis."
+    },
+    {
+      "id": "redrob-vector-cat",
+      "style": "illustration",
+      "subject": "vector-pop-art-cat",
+      "difficulty": "medium",
+      "tags": [
+        "fal-guide",
+        "illustration",
+        "vector",
+        "medium"
+      ],
+      "prompt": "flat 2d vector illustration, a grey cat in a confident walking stride profile view with tail held high, background features a speeding yellow taxi cab with exaggerated horizontal motion blur and speed lines, deep blue windows, colorful traffic light on the right with pink and blue accents, solid bright chroma green background, geometric floating stars, bold black outlines, vibrant high saturation colors, kinetic pop art style, animation keyframe aesthetic"
+    },
+    {
+      "id": "redrob-y2k-chrome",
+      "style": "surreal",
+      "subject": "y2k-chrome-fruit",
+      "difficulty": "hard",
+      "tags": [
+        "fal-guide",
+        "surreal",
+        "y2k",
+        "medium"
+      ],
+      "prompt": "A vase of oranges and two pomegranates rendered in a retro-futuristic Y2K cyber-aesthetic, characterized by hyper-reflective liquid metal and heavy airbrush textures. The central vase is constructed from elongated, razor-sharp tribal chrome tendrils and fluid, spiky cyber-sigilism shapes that interlock and sweep outward into sharp points. Nestled within the jagged metallic thorns are smooth, highly polished metallic orange spheres and two deep ruby-magenta pomegranate forms, all coated in a glassy, iridescent gloss. Blinding, multi-point white starburst lens flares erupt from the intense specular highlights across every sharp tip and curved spherical surface. The metallic fruit and spiky vessel sit against a smooth, stylized gradient backdrop transitioning from deep, saturated cobalt blue at the top to a hazy, neon cyan and magenta gradient at the base. The highly polished liquid chrome surfaces cast starkly mirrored reflections of the vivid pink and cyan environment, creating high-contrast chromatic edges. The rendering technique mimics early 2000s vintage 3D CGI artwork, saturated with a coarse, heavy film grain and a distinct digital noise texture overlaying the entire composition."
+    },
+    {
+      "id": "redrob-zhang-yimou",
+      "style": "portrait-fashion",
+      "subject": "zhang-yimou-cinematography",
+      "difficulty": "medium",
+      "tags": [
+        "fal-guide",
+        "cinematography",
+        "film",
+        "medium"
+      ],
+      "prompt": "cinematography in a film in the style of Zhang Yimou and Raise the red lantern. Moody lighting, saturated colors."
+    }
+  ]
+}

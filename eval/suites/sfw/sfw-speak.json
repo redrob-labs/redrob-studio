@@ -1,0 +1,140 @@
+{
+  "version": 2,
+  "suite": "sfw-speak",
+  "description": "Speak: text × speaker × language. Score intelligibility and language fidelity.",
+  "rating": "sfw",
+  "path": "sfw",
+  "modality": "audio",
+  "task": "speak",
+  "tool": true,
+  "loraRecipeSet": "all",
+  "workflows": [
+    "qwen3-tts-speak"
+  ],
+  "notes": [
+    "Supply local media under eval/fixtures/ when running tool suites (none shipped).",
+    "Score fidelity to the tool job (edit accuracy, identity lock, clarity, compression artifacts, etc.)."
+  ],
+  "prompts": [
+    {
+      "id": "speak-clarity",
+      "difficulty": "medium",
+      "tags": [
+        "speak",
+        "tts",
+        "sfw"
+      ],
+      "prompt": "Hello! This is a quick clarity check for the Speak tool.",
+      "speaker": "Ryan",
+      "language": "English"
+    },
+    {
+      "id": "speak-delivery",
+      "difficulty": "medium",
+      "tags": [
+        "speak",
+        "tts",
+        "sfw"
+      ],
+      "prompt": "Please leave your package by the door. Thank you for delivering today.",
+      "speaker": "Aiden",
+      "language": "English"
+    },
+    {
+      "id": "speak-zh-weather",
+      "difficulty": "medium",
+      "tags": [
+        "speak",
+        "tts",
+        "sfw"
+      ],
+      "prompt": "欢迎收听今日天气播报，午后多云，气温适宜。",
+      "speaker": "Vivian",
+      "language": "Chinese"
+    },
+    {
+      "id": "speak-zh-voicemail",
+      "difficulty": "medium",
+      "tags": [
+        "speak",
+        "tts",
+        "sfw"
+      ],
+      "prompt": "请在提示音后留下您的姓名和回电号码。",
+      "speaker": "Serena",
+      "language": "Chinese"
+    },
+    {
+      "id": "speak-zh-casual",
+      "difficulty": "medium",
+      "tags": [
+        "speak",
+        "tts",
+        "sfw"
+      ],
+      "prompt": "今天天气不错，我们晚点一起去公园走走吧。",
+      "speaker": "Uncle_fu",
+      "language": "Auto"
+    },
+    {
+      "id": "speak-en-meeting",
+      "difficulty": "medium",
+      "tags": [
+        "speak",
+        "tts",
+        "sfw"
+      ],
+      "prompt": "Your meeting starts in five minutes in the blue conference room.",
+      "speaker": "Dylan",
+      "language": "English"
+    },
+    {
+      "id": "speak-en-safety",
+      "difficulty": "medium",
+      "tags": [
+        "speak",
+        "tts",
+        "sfw"
+      ],
+      "prompt": "Safety first: look both ways before you cross the street.",
+      "speaker": "Eric",
+      "language": "English"
+    },
+    {
+      "id": "speak-ja-morning",
+      "difficulty": "hard",
+      "tags": [
+        "speak",
+        "tts",
+        "sfw"
+      ],
+      "prompt": "おはようございます。本日の予定をご確認ください。",
+      "speaker": "Ono_anna",
+      "language": "Japanese"
+    },
+    {
+      "id": "speak-ko-booking",
+      "difficulty": "hard",
+      "tags": [
+        "speak",
+        "tts",
+        "sfw"
+      ],
+      "prompt": "안녕하세요. 예약이 확인되었습니다. 잠시만 기다려 주세요.",
+      "speaker": "Sohee",
+      "language": "Korean"
+    },
+    {
+      "id": "speak-en-meta",
+      "difficulty": "hard",
+      "tags": [
+        "speak",
+        "tts",
+        "sfw"
+      ],
+      "prompt": "Speak eval sample ten — steady pacing, clear diction, SFW.",
+      "speaker": "Ryan",
+      "language": "English"
+    }
+  ]
+}

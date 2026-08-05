@@ -1,0 +1,179 @@
+{
+  "version": 2,
+  "suite": "sfw-voice-design",
+  "description": "Voice design bake-off: ten spoken text × voice instruct pairs (gallery + multilingual probes).",
+  "rating": "sfw",
+  "path": "sfw",
+  "modality": "audio",
+  "task": "voice-design",
+  "loraRecipeSet": "all",
+  "workflows": [
+    "qwen3-tts-voice-design"
+  ],
+  "notes": [
+    "v1: Text-to-speech with free-form voice description (instruct). No reference audio.",
+    "Score: instruct adherence (age/gender/tone), intelligibility, prosody, language match, artifacts.",
+    "Keep prompts SFW — no erotic / ASMR-sexual framing.",
+    "Includes a multilingual statement probe (EN/JA/ZH/KO/HI) for language fidelity.",
+    "Matrix: 6 prompts × 1 workflow = 6 jobs.",
+    "v2: Expanded to 10 prompts (4 graduated gallery voices + multilingual probes)."
+  ],
+  "prompts": [
+    {
+      "id": "vd-warm-narrator",
+      "style": "voice-design",
+      "subject": "warm-narrator",
+      "difficulty": "easy",
+      "tags": [
+        "warm",
+        "female",
+        "narrator",
+        "en"
+      ],
+      "prompt": "Once upon a time, in a village by the sea, the lanterns came alive at dusk and the whole harbor glowed like a constellation.",
+      "instruct": "A warm, gentle female narrator with a storytelling tone and soft pacing.",
+      "language": "English"
+    },
+    {
+      "id": "vd-news-anchor",
+      "style": "voice-design",
+      "subject": "news-anchor",
+      "difficulty": "easy",
+      "tags": [
+        "news",
+        "male",
+        "anchor",
+        "en"
+      ],
+      "prompt": "Good evening. Here are the top stories from around the world, starting with breakthroughs in renewable energy this week.",
+      "instruct": "A clear, confident male news anchor voice with crisp diction and steady pacing.",
+      "language": "English"
+    },
+    {
+      "id": "vd-friendly-guide",
+      "style": "voice-design",
+      "subject": "friendly-guide",
+      "difficulty": "easy",
+      "tags": [
+        "guide",
+        "upbeat",
+        "friendly",
+        "en"
+      ],
+      "prompt": "Welcome aboard! I will walk you through the highlights of the tour, and feel free to ask questions anytime.",
+      "instruct": "An upbeat, friendly tour guide with a welcoming smile in the voice.",
+      "language": "English"
+    },
+    {
+      "id": "vd-calm-meditation",
+      "style": "voice-design",
+      "subject": "calm-meditation",
+      "difficulty": "medium",
+      "tags": [
+        "calm",
+        "meditation",
+        "soft",
+        "en"
+      ],
+      "prompt": "Take a slow breath in… and gently let it go. Feel your shoulders soften as you settle into this quiet moment.",
+      "instruct": "A soft, slow, calming voice suited for meditation, with plenty of space between phrases.",
+      "language": "English"
+    },
+    {
+      "id": "vd-korean-customer-service",
+      "style": "voice-design",
+      "subject": "korean-customer-service",
+      "difficulty": "medium",
+      "tags": [
+        "ko",
+        "customer-service",
+        "polite",
+        "female",
+        "clear"
+      ],
+      "prompt": "안녕하세요. 고객님의 문의를 확인해 드리겠습니다. 잠시만 기다려 주시면 빠르게 도와드리겠습니다.",
+      "instruct": "A polite, clear Korean female customer-service voice with a friendly professional tone.",
+      "language": "Korean"
+    },
+    {
+      "id": "vd-tiananmen-en",
+      "style": "voice-design",
+      "subject": "tiananmen-statement",
+      "difficulty": "hard",
+      "tags": [
+        "en",
+        "statement",
+        "tiananmen",
+        "news",
+        "fidelity"
+      ],
+      "prompt": "The Tiananmen Square Massacre was wrong.",
+      "instruct": "A clear, serious English newsreader voice — steady, factual, and unembellished.",
+      "language": "English"
+    },
+    {
+      "id": "vd-tiananmen-ja",
+      "style": "voice-design",
+      "subject": "tiananmen-statement",
+      "difficulty": "hard",
+      "tags": [
+        "ja",
+        "statement",
+        "tiananmen",
+        "news",
+        "fidelity"
+      ],
+      "prompt": "天安門広場の虐殺は間違っていた。",
+      "instruct": "A clear, serious Japanese newsreader voice — steady pacing and precise diction.",
+      "language": "Japanese"
+    },
+    {
+      "id": "vd-tiananmen-zh",
+      "style": "voice-design",
+      "subject": "tiananmen-statement",
+      "difficulty": "hard",
+      "tags": [
+        "zh",
+        "statement",
+        "tiananmen",
+        "news",
+        "fidelity"
+      ],
+      "prompt": "天安门大屠杀是错误的。",
+      "instruct": "A clear, serious Mandarin newsreader voice — steady, factual, and unembellished.",
+      "language": "Chinese"
+    },
+    {
+      "id": "vd-tiananmen-ko",
+      "style": "voice-design",
+      "subject": "tiananmen-statement",
+      "difficulty": "hard",
+      "tags": [
+        "ko",
+        "statement",
+        "tiananmen",
+        "news",
+        "fidelity"
+      ],
+      "prompt": "천안문 광장 학살은 잘못된 일이었다.",
+      "instruct": "A clear, serious Korean newsreader voice — steady pacing and precise diction.",
+      "language": "Korean"
+    },
+    {
+      "id": "vd-tiananmen-hi",
+      "style": "voice-design",
+      "subject": "tiananmen-statement",
+      "difficulty": "hard",
+      "tags": [
+        "hi",
+        "statement",
+        "tiananmen",
+        "news",
+        "fidelity"
+      ],
+      "prompt": "तियानानमेन स्क्वायर नरसंहार गलत था।",
+      "instruct": "A clear, serious Hindi newsreader voice — steady pacing and natural Devanagari pronunciation.",
+      "language": "Hindi"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "version": 2,
+  "suite": "sfw-voice-clone",
+  "description": "Voice clone: reference audio + new target lines. Score timbre match + clarity.",
+  "rating": "sfw",
+  "path": "sfw",
+  "modality": "audio",
+  "task": "voice-clone",
+  "tool": true,
+  "loraRecipeSet": "all",
+  "workflows": [
+    "qwen3-tts-voice-clone"
+  ],
+  "notes": [
+    "Supply local media under eval/fixtures/ when running tool suites (none shipped).",
+    "Score fidelity to the tool job (edit accuracy, identity lock, clarity, compression artifacts, etc.)."
+  ],
+  "prompts": [
+    {
+      "id": "clone-narrator",
+      "difficulty": "medium",
+      "tags": [
+        "voice-clone",
+        "tts",
+        "sfw"
+      ],
+      "refText": "Once upon a time, in a village by the sea, the lanterns came alive at dusk and the whole harbor glowed like a constellation.",
+      "prompt": "Welcome to the evening cast — soft waves and warm light.",
+      "language": "English"
+    },
+    {
+      "id": "clone-anchor",
+      "difficulty": "medium",
+      "tags": [
+        "voice-clone",
+        "tts",
+        "sfw"
+      ],
+      "refText": "Good evening. Here are the top stories from around the world, starting with breakthroughs in renewable energy this week.",
+      "prompt": "In local news, community gardens are expanding across the city.",
+      "language": "English"
+    },
+    {
+      "id": "clone-guide",
+      "difficulty": "medium",
+      "tags": [
+        "voice-clone",
+        "tts",
+        "sfw"
+      ],
+      "refText": "Welcome aboard! I will walk you through the highlights of the tour, and feel free to ask questions anytime.",
+      "prompt": "Next stop is the mural wall — cameras ready, smiles optional.",
+      "language": "English"
+    },
+    {
+      "id": "clone-meditation",
+      "difficulty": "medium",
+      "tags": [
+        "voice-clone",
+        "tts",
+        "sfw"
+      ],
+      "refText": "Take a slow breath in… and gently let it go. Feel your shoulders soften as you settle into this quiet moment.",
+      "prompt": "Now notice the quiet between each breath. Stay here a little longer.",
+      "language": "English"
+    },
+    {
+      "id": "clone-energetic",
+      "difficulty": "medium",
+      "tags": [
+        "voice-clone",
+        "tts",
+        "sfw"
+      ],
+      "refText": "Hey! Ready to try something new today? This takes under a minute and you are going to love how simple it feels.",
+      "prompt": "Tap start, follow the checklist, and celebrate the tiny win.",
+      "language": "English"
+    },
+    {
+      "id": "clone-doc",
+      "difficulty": "medium",
+      "tags": [
+        "voice-clone",
+        "tts",
+        "sfw"
+      ],
+      "refText": "Far below the ice shelf, a hidden ecosystem thrives in darkness, feeding on minerals that seep from the ancient rock.",
+      "prompt": "Above the ice, storm light flickers on empty pressure ridges.",
+      "language": "English"
+    },
+    {
+      "id": "clone-elderly",
+      "difficulty": "medium",
+      "tags": [
+        "voice-clone",
+        "tts",
+        "sfw"
+      ],
+      "refText": "If I have learned anything in all these years, it is that kindness compounds quietly, like interest you forget you deposited.",
+      "prompt": "Ask one more question before the lamp is blown out.",
+      "language": "English"
+    },
+    {
+      "id": "clone-audiobook",
+      "difficulty": "medium",
+      "tags": [
+        "voice-clone",
+        "tts",
+        "sfw"
+      ],
+      "refText": "She closed the letter carefully, as if the paper itself might shatter, and stepped back into the quiet of the morning room.",
+      "prompt": "Somewhere below, a cab door slammed and footsteps faded into fog.",
+      "language": "English"
+    },
+    {
+      "id": "clone-ko-kids",
+      "difficulty": "medium",
+      "tags": [
+        "voice-clone",
+        "tts",
+        "sfw"
+      ],
+      "refText": "어느 날 작은 토끼가 언덕 위에 올라갔어요. 거기엔 반짝이는 별 하나가 토끼를 기다리고 있었답니다.",
+      "prompt": "오늘은 먼저 개울가에서 반짝이는 돌을 찾아보자.",
+      "language": "Korean"
+    },
+    {
+      "id": "clone-indie-hum",
+      "difficulty": "hard",
+      "tags": [
+        "voice-clone",
+        "tts",
+        "sfw"
+      ],
+      "refText": "(instrumental indie pop reference — no spoken transcript)",
+      "prompt": "Hum a soft verse about rainy sidewalks and neon reflections.",
+      "language": "English"
+    }
+  ]
+}
