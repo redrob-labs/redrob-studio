@@ -15,7 +15,7 @@ remain under their upstream licenses. See eval/THIRD_PARTY_WEIGHTS.md for the
 authoritative inventory.
 
 Apache-2.0:
-  - savagemanage/redrob-image (redrob-image.safetensors), with CLIP from
+  - redrob-labs/redrob-image (redrob-image.safetensors), with CLIP from
     Comfy-Org/z_image_turbo and VAE from Comfy-Org/HiDream-I1_ComfyUI
   - Qwen3-TTS, Qwen3-ASR, Qwen2.5-VL-7B-Instruct
 

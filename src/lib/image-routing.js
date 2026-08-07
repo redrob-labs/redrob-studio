@@ -1,7 +1,7 @@
 /**
  * Image generator routing table.
  *
- * Create → Redrob Image (https://huggingface.co/savagemanage/redrob-image)
+ * Create → Redrob Image (https://huggingface.co/redrob-labs/redrob-image)
  */
 
 export const INTENT_MODES = [

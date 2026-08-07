@@ -8,7 +8,7 @@ from product routing.
 
 | Lane | Use | Do not |
 | ---- | --- | ------ |
-| Image create | **[Redrob Image](https://huggingface.co/savagemanage/redrob-image)** (`redrob-image.safetensors`) | Peer Create checkpoints; non-permissive stacks; image Edit |
+| Image create | **[Redrob Image](https://huggingface.co/redrob-labs/redrob-image)** (`redrob-image.safetensors`) | Peer Create checkpoints; non-permissive stacks; image Edit |
 | Upscale | Lanczos `ImageScale` only | UltraSharp, CodeFormer |
 | Audio | Qwen3 TTS / ASR, ACE-Step (Redrob Tune, MIT) | - |
 | Vision | Qwen2.5-VL | - |
@@ -18,7 +18,7 @@ Eval suites: image Create (`image-comparison` on Redrob Image), music (`sfw-audi
 
 Weight inventory: [`THIRD_PARTY_WEIGHTS.md`](./THIRD_PARTY_WEIGHTS.md).
 
-Local Ubuntu bootstrap (no deploy): `scripts/setup-comfyui-local.sh` (pulls UNET from `savagemanage/redrob-image`).
+Local Ubuntu bootstrap (no deploy): `scripts/setup-comfyui-local.sh` (pulls UNET from `redrob-labs/redrob-image`).
 
 ## Bake-off → Redrob Image (2026-08)
 
@@ -31,7 +31,7 @@ Compared Z-Image Turbo peers (ZepiC / RebelReal / Photorealistic Snapshot), Qwen
 | Community | Z-Image ≫ Boogu |
 
 **Decision:** Create = **Redrob Image** — merged UNET published at
-[savagemanage/redrob-image](https://huggingface.co/savagemanage/redrob-image) (Apache-2.0).
+[redrob-labs/redrob-image](https://huggingface.co/redrob-labs/redrob-image) (Apache-2.0).
 Comfy peers: `qwen_3_4b_fp8_mixed.safetensors` + `ae.safetensors` from Comfy-Org.
 
 ## Ops invariant (Qwen TTS / VL)

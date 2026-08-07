@@ -959,7 +959,7 @@ function EvalPageContent() {
                   : isTextSuite
                     ? 'Text suite: ASR / VLM outputs persisted as .txt under the run folder.'
                   : suite?.suite === 'image-comparison'
-                    ? 'Redrob Image Create eval (savagemanage/redrob-image).'
+                    ? 'Redrob Image Create eval (redrob-labs/redrob-image).'
                     : suite?.suite?.startsWith('sfw-')
                       ? `Suite ${suite.suite}: workflows from suite file.`
                       : 'Select a suite to run.'}

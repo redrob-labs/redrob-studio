@@ -259,9 +259,9 @@ fi
 if [[ "$SKIP_MODELS" -eq 1 ]]; then
   log "Skipping model downloads (--skip-models)"
 else
-  # --- Create: Redrob Image (savagemanage/redrob-image) ---
+  # --- Create: Redrob Image (redrob-labs/redrob-image) ---
   if [[ "$PROFILE" == "all" || "$PROFILE" == "create" ]]; then
-    hf_fetch savagemanage/redrob-image \
+    hf_fetch redrob-labs/redrob-image \
       redrob-image.safetensors \
       "$MODELS/diffusion_models/redrob-image.safetensors" || true
     hf_fetch Comfy-Org/z_image_turbo \

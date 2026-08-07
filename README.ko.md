@@ -28,7 +28,7 @@ Next.js 앱 자체는 가볍습니다. 생성은 ComfyUI에서 돌아가므로, 
 
 | 모달리티 | 도구 |
 | -------- | ---- |
-| 이미지 | 만들기 ([Redrob Image](https://huggingface.co/savagemanage/redrob-image)), 업스케일 (Lanczos), 용량 줄이기, 형식 변환, 비전 |
+| 이미지 | 만들기 ([Redrob Image](https://huggingface.co/redrob-labs/redrob-image)), 업스케일 (Lanczos), 용량 줄이기, 형식 변환, 비전 |
 | 오디오 | 말하기, 복제, 디자인, 음악 (Redrob Tune / ACE-Step), 받아쓰기, 오디오 추출 (영상 파일에서), 변환 |
 
 도구는 `src/workflows/manifest.json`에 등록되고, `src/workflows/`의 ComfyUI API 워크플로 템플릿을 서버에서 id로 해석합니다.
@@ -92,11 +92,11 @@ ComfyUI는 호스트 네트워크에만 두고, 공개 인터넷에 포트를 �
 
 ## Create 모델
 
-이미지 만들기는 UNET 하나, [savagemanage/redrob-image](https://huggingface.co/savagemanage/redrob-image) (`task`: `redrob-image`)를 씁니다.
+이미지 만들기는 UNET 하나, [redrob-labs/redrob-image](https://huggingface.co/redrob-labs/redrob-image) (`task`: `redrob-image`)를 씁니다.
 
 | `$COMFY_HOME/models` 아래 파일 | 역할 | 출처 |
 | ------------------------------- | ---- | ---- |
-| `diffusion_models/redrob-image.safetensors` | 병합 UNET | [savagemanage/redrob-image](https://huggingface.co/savagemanage/redrob-image) |
+| `diffusion_models/redrob-image.safetensors` | 병합 UNET | [redrob-labs/redrob-image](https://huggingface.co/redrob-labs/redrob-image) |
 | `text_encoders/qwen_3_4b_fp8_mixed.safetensors` | CLIP | [Comfy-Org/z_image_turbo](https://huggingface.co/Comfy-Org/z_image_turbo) |
 | `vae/ae.safetensors` | VAE | [Comfy-Org/HiDream-I1_ComfyUI](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI) |
 

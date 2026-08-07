@@ -28,7 +28,7 @@ The Next.js app itself is lightweight. Generation runs on ComfyUI; without a GPU
 
 | Modality | Tools |
 | -------- | ----- |
-| Image | Create ([Redrob Image](https://huggingface.co/savagemanage/redrob-image)), Upscale (Lanczos), Compress, Convert, Vision |
+| Image | Create ([Redrob Image](https://huggingface.co/redrob-labs/redrob-image)), Upscale (Lanczos), Compress, Convert, Vision |
 | Audio | Speak, Clone, Design, Music (Redrob Tune / ACE-Step), Transcribe, Extract audio (from a video file), Convert |
 
 Tools are registered in `src/workflows/manifest.json` and backed by ComfyUI API workflow templates in `src/workflows/`, resolved server-side by id.
@@ -92,11 +92,11 @@ Keep ComfyUI on the host network only. You can open `http://127.0.0.1:8188` on t
 
 ## Create model
 
-Image Create runs a single UNET, [savagemanage/redrob-image](https://huggingface.co/savagemanage/redrob-image) (`task`: `redrob-image`).
+Image Create runs a single UNET, [redrob-labs/redrob-image](https://huggingface.co/redrob-labs/redrob-image) (`task`: `redrob-image`).
 
 | File under `$COMFY_HOME/models` | Role | Source |
 | ------------------------------- | ---- | ------ |
-| `diffusion_models/redrob-image.safetensors` | Merged UNET | [savagemanage/redrob-image](https://huggingface.co/savagemanage/redrob-image) |
+| `diffusion_models/redrob-image.safetensors` | Merged UNET | [redrob-labs/redrob-image](https://huggingface.co/redrob-labs/redrob-image) |
 | `text_encoders/qwen_3_4b_fp8_mixed.safetensors` | CLIP | [Comfy-Org/z_image_turbo](https://huggingface.co/Comfy-Org/z_image_turbo) |
 | `vae/ae.safetensors` | VAE | [Comfy-Org/HiDream-I1_ComfyUI](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI) |
 

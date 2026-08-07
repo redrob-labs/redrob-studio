@@ -3,7 +3,7 @@
 Open **[/eval](/eval)** (history under `/eval/<runId>`).
 
 Suites cover **image Create**, **music (audio)**, and **voice**.
-Image Create uses [Redrob Image](https://huggingface.co/savagemanage/redrob-image).
+Image Create uses [Redrob Image](https://huggingface.co/redrob-labs/redrob-image).
 See [`THIRD_PARTY_WEIGHTS.md`](./THIRD_PARTY_WEIGHTS.md) and [`FINDINGS.md`](./FINDINGS.md).
 
 ## Suites

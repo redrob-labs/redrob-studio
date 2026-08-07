@@ -1,7 +1,7 @@
 {
   "version": 1,
   "suite": "image-comparison",
-  "description": "Redrob Image Create eval (30 non-typography prompts). Weights: savagemanage/redrob-image.",
+  "description": "Redrob Image Create eval (30 non-typography prompts). Weights: redrob-labs/redrob-image.",
   "rating": "sfw",
   "path": "sfw",
   "modality": "image",
@@ -9,7 +9,7 @@
   "loraRecipeSet": "all",
   "workflows": ["redrob-image"],
   "notes": [
-    "v13: Single Create stack - Redrob Image from https://huggingface.co/savagemanage/redrob-image.",
+    "v13: Single Create stack - Redrob Image from https://huggingface.co/redrob-labs/redrob-image.",
     "Typography prompts excluded (known weak)."
   ],
   "prompts": [

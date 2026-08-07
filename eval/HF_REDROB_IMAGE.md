@@ -12,7 +12,7 @@ tags:
 
 Create stack for redrob-studio.
 
-**Weights:** [savagemanage/redrob-image](https://huggingface.co/savagemanage/redrob-image)
+**Weights:** [redrob-labs/redrob-image](https://huggingface.co/redrob-labs/redrob-image)
 
 | File | Role |
 | --- | --- |

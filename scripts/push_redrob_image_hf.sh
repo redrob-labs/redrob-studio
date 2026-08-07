@@ -5,11 +5,11 @@
 #   hf auth login   # or: export HF_TOKEN=hf_...
 #
 # Usage:
-#   HF_REPO=savagemanage/redrob-image bash scripts/push_redrob_image_hf.sh
+#   HF_REPO=redrob-labs/redrob-image bash scripts/push_redrob_image_hf.sh
 
 set -euo pipefail
 
-HF_REPO="${HF_REPO:-savagemanage/redrob-image}"
+HF_REPO="${HF_REPO:-redrob-labs/redrob-image}"
 WEIGHT="${WEIGHT:-/opt/dlami/nvme/comfyui-models/diffusion_models/redrob-image.safetensors}"
 CARD="${CARD:-}"
 COMFY_VENV="${COMFY_VENV:-$HOME/ComfyUI/venv}"

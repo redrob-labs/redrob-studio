@@ -332,7 +332,7 @@ const en = {
   },
   createModel: {
     'redrob-image': {
-      description: 'Apache-2.0 merged UNET from savagemanage/redrob-image (Z-Image Turbo lineage).',
+      description: 'Apache-2.0 merged UNET from redrob-labs/redrob-image (Z-Image Turbo lineage).',
     },
   },
   error: {
@@ -805,7 +805,7 @@ const ko = {
   },
   createModel: {
     'redrob-image': {
-      description: 'savagemanage/redrob-image에서 합친 Apache-2.0 UNET이에요. Z-Image Turbo 계열이에요.',
+      description: 'redrob-labs/redrob-image에서 합친 Apache-2.0 UNET이에요. Z-Image Turbo 계열이에요.',
     },
   },
   error: {

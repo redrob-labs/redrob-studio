@@ -34,14 +34,14 @@ export const IMAGE_INTENT_MODES = [
 
 /**
  * Create-from-scratch diffusion families.
- * Default: Redrob Image — https://huggingface.co/savagemanage/redrob-image
+ * Default: Redrob Image — https://huggingface.co/redrob-labs/redrob-image
  */
 export const CREATE_MODEL_FAMILIES = [
   {
     id: 'redrob-image',
     label: 'Redrob Image',
     description:
-      'Redrob Image — Apache-2.0 merged UNET from savagemanage/redrob-image (Z-Image Turbo lineage).',
+      'Redrob Image — Apache-2.0 merged UNET from redrob-labs/redrob-image (Z-Image Turbo lineage).',
     defaultTask: 'redrob-image',
     task: 'redrob-image',
     recommended: true,

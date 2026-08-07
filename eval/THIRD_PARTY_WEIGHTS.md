@@ -5,7 +5,7 @@ Apache-2.0, MIT, or BSD (or use no learned upscaler weights).
 
 | Weight / pack | Used by | License | Hugging Face / source |
 | --- | --- | --- | --- |
-| `redrob-image.safetensors` (+ `qwen_3_4b_fp8_mixed.safetensors`, shared `ae.safetensors`) | **Create:** `redrob-image` | Apache-2.0 | [savagemanage/redrob-image](https://huggingface.co/savagemanage/redrob-image); CLIP/VAE from [Comfy-Org/z_image_turbo](https://huggingface.co/Comfy-Org/z_image_turbo) / [Comfy-Org/HiDream-I1_ComfyUI](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI) (`ae.safetensors`) |
+| `redrob-image.safetensors` (+ `qwen_3_4b_fp8_mixed.safetensors`, shared `ae.safetensors`) | **Create:** `redrob-image` | Apache-2.0 | [redrob-labs/redrob-image](https://huggingface.co/redrob-labs/redrob-image); CLIP/VAE from [Comfy-Org/z_image_turbo](https://huggingface.co/Comfy-Org/z_image_turbo) / [Comfy-Org/HiDream-I1_ComfyUI](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI) (`ae.safetensors`) |
 | Qwen3-TTS (0.6B / 1.7B via Comfy custom nodes) | `speak`, `voice-clone`, `voice-design` | Apache-2.0 | [Qwen/Qwen3-TTS](https://huggingface.co/Qwen/Qwen3-TTS) |
 | `Qwen/Qwen3-ASR-0.6B`, `Qwen/Qwen3-ASR-1.7B` | `transcribe` | Apache-2.0 | [Qwen/Qwen3-ASR](https://huggingface.co/Qwen/Qwen3-ASR) |
 | `Qwen2.5-VL-7B-Instruct` | `vision` | Apache-2.0 | [Qwen/Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) |
@@ -26,4 +26,4 @@ Local install: `scripts/setup-comfyui-local.sh` (Ubuntu GPU host; no deploy/secr
 ## Removed from Create
 
 Qwen-Image-2512, Boogu Base/Turbo, runtime RebelReal / Snapshot LoRA peers — Create is a single
-[savagemanage/redrob-image](https://huggingface.co/savagemanage/redrob-image) UNET. See [`FINDINGS.md`](./FINDINGS.md).
+[redrob-labs/redrob-image](https://huggingface.co/redrob-labs/redrob-image) UNET. See [`FINDINGS.md`](./FINDINGS.md).
