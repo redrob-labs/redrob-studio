@@ -2,9 +2,13 @@
 
 [English](./README.md) | 한국어
 
-로컬 GPU의 ComfyUI를 백엔드로 쓰는 Next.js 스튜디오입니다. 이미지·음성·영상 도구를 브라우저에서 돌리고, 호스팅된 추론 API로는 보내지 않습니다. 웹앱이 직접 통제하는 ComfyUI 프로세스와만 통신합니다.
+로컬 GPU의 ComfyUI를 백엔드로 쓰는 Next.js 스튜디오입니다. **이미지·오디오** 도구를 브라우저에서 돌리고, 호스팅된 추론 API로는 보내지 않습니다. 웹앱이 직접 통제하는 ComfyUI 프로세스와만 통신합니다.
+
+채팅 UI와 비디오 생성 스택은 없습니다. 홈(`/`)은 도구 목록이고, 각 도구는 자체 워크스페이스로 열립니다.
 
 이장훈 (Janghoon Lee)이 Redrob를 위해 만들었습니다. 라이선스는 Apache License 2.0입니다.
+
+**저장소:** [redrob-labs/redrob-studio](https://github.com/redrob-labs/redrob-studio)
 
 ## 요구 사항
 
@@ -25,8 +29,7 @@ Next.js 앱 자체는 가볍습니다. 생성은 ComfyUI에서 돌아가므로, 
 | 모달리티 | 도구 |
 | -------- | ---- |
 | 이미지 | 만들기 ([Redrob Image](https://huggingface.co/savagemanage/redrob-image)), 업스케일 (Lanczos), 용량 줄이기, 형식 변환, 비전 |
-| 오디오 | 말하기, 복제, 디자인, 음악 (Redrob Tune / ACE-Step), 받아쓰기, 오디오 추출, 변환 |
-| 비디오 | 압축 |
+| 오디오 | 말하기, 복제, 디자인, 음악 (Redrob Tune / ACE-Step), 받아쓰기, 오디오 추출 (영상 파일에서), 변환 |
 
 도구는 `src/workflows/manifest.json`에 등록되고, `src/workflows/`의 ComfyUI API 워크플로 템플릿을 서버에서 id로 해석합니다.
 

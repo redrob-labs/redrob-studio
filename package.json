@@ -1,15 +1,15 @@
 {
   "name": "redrob-studio",
   "version": "0.1.0",
-  "description": "Redrob Studio — local image, audio, and video tools backed by ComfyUI",
+  "description": "Redrob Studio — local image and audio tools backed by ComfyUI",
   "license": "Apache-2.0",
   "author": "Janghoon Lee",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/savagemanage/redrob-studio.git"
+    "url": "git+https://github.com/redrob-labs/redrob-studio.git"
   },
-  "homepage": "https://github.com/savagemanage/redrob-studio#readme",
+  "homepage": "https://github.com/redrob-labs/redrob-studio#readme",
   "engines": {
     "node": ">=20"
   },

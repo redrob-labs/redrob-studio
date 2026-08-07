@@ -3,7 +3,7 @@
 ## Reporting
 
 If you discover a vulnerability, open a private GitHub security advisory on
-[savagemanage/redrob-studio](https://github.com/savagemanage/redrob-studio)
+[redrob-labs/redrob-studio](https://github.com/redrob-labs/redrob-studio)
 before public disclosure. Include steps to reproduce and impact.
 
 ## Architecture invariants

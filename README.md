@@ -2,9 +2,13 @@
 
 English | [한국어](./README.ko.md)
 
-A Next.js studio for image, audio, and video tools, backed by ComfyUI running on your own local GPU. Nothing is sent to a hosted inference API: the web app talks to a ComfyUI process you control.
+A Next.js studio for **image and audio** tools, backed by ComfyUI on your own local GPU. Nothing is sent to a hosted inference API: the web app talks only to a ComfyUI process you control.
+
+There is no chat surface and no video generation stack — home is a tools catalog; each tool opens its own workspace.
 
 Built by Janghoon Lee (이장훈) for Redrob. Licensed under the Apache License 2.0.
+
+**Repository:** [redrob-labs/redrob-studio](https://github.com/redrob-labs/redrob-studio)
 
 ## Requirements
 
@@ -25,8 +29,7 @@ The Next.js app itself is lightweight. Generation runs on ComfyUI; without a GPU
 | Modality | Tools |
 | -------- | ----- |
 | Image | Create ([Redrob Image](https://huggingface.co/savagemanage/redrob-image)), Upscale (Lanczos), Compress, Convert, Vision |
-| Audio | Speak, Clone, Design, Music (Redrob Tune / ACE-Step), Transcribe, Extract audio, Convert |
-| Video | Compress |
+| Audio | Speak, Clone, Design, Music (Redrob Tune / ACE-Step), Transcribe, Extract audio (from a video file), Convert |
 
 Tools are registered in `src/workflows/manifest.json` and backed by ComfyUI API workflow templates in `src/workflows/`, resolved server-side by id.
 
